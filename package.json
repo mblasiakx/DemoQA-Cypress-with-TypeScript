@@ -1,0 +1,23 @@
+{
+  "name": "demoqa-cypress-with-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mblasiakx/DemoQA-Cypress-with-TypeScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mblasiakx/DemoQA-Cypress-with-TypeScript/issues"
+  },
+  "homepage": "https://github.com/mblasiakx/DemoQA-Cypress-with-TypeScript#readme",
+  "devDependencies": {
+    "cypress": "^10.4.0",
+    "typescript": "^4.7.4"
+  }
+}
