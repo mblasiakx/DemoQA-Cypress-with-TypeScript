@@ -1,12 +1,10 @@
-import { BasePage } from '../../objects/base_page';
-import { DatePicker } from '../../objects/widgets/data_picker';
-
+import PageFactory from '../../objects/page_factory';
 describe('Test DatePicker', () => {
   let datePicker;
   beforeEach(() => {
     cy.visit('/');
-    const basePage = new BasePage();
-    datePicker = new DatePicker();
+    const basePage = PageFactory.basePage;
+    datePicker = PageFactory.DatePicker;
     basePage.goToSectionFromCategoryCards('Widgets');
     basePage.goToSectionFromleftPanel('Date Picker');
   });

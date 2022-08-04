@@ -1,12 +1,11 @@
-import { BasePage } from '../../objects/base_page';
-import { Modals } from '../../objects/alerts and frame/modals';
-
+import PageFactory from '../../objects/page_factory';
 describe('Test Modals', () => {
   let modals;
+
   beforeEach(() => {
     cy.visit('/');
-    const basePage = new BasePage();
-    modals = new Modals();
+    const basePage = PageFactory.basePage;
+    modals = PageFactory.Modals;
     basePage.goToSectionFromCategoryCards('Alerts, Frame & Windows');
     basePage.goToSectionFromleftPanel('Modal Dialogs');
   });

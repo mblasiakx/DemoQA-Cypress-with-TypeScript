@@ -1,9 +1,10 @@
-import { BasePage } from '../../objects/base_page';
-import { Links } from '../../objects/elements/links';
+import PageFactory from '../../objects/page_factory';
 describe('Check Links', () => {
+  let links;
   beforeEach(() => {
     cy.visit('/');
-    const basePage = new BasePage();
+    const basePage = PageFactory.basePage;
+    links = PageFactory.Links;
     basePage.goToSectionFromCategoryCards('Elements');
     basePage.goToSectionFromleftPanel('Links');
   });
@@ -19,7 +20,6 @@ describe('Check Links', () => {
 
   for (const name of textData)
     it(`Should open "${name.actionType}" link`, () => {
-      const links = new Links();
       links.clickOnLinksToSendApiCall(name.actionType);
 
       links.linkInfoMessage
@@ -28,7 +28,6 @@ describe('Check Links', () => {
     });
 
   it('Should open "not found" link', () => {
-    const links = new Links();
     links.clickOnLinksToSendApiCall('invalid-url');
   });
 });

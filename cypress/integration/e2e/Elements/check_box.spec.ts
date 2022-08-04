@@ -1,15 +1,15 @@
-import { BasePage } from '../../objects/base_page';
-import { CheckBox } from '../../objects/elements/check_box';
+import PageFactory from '../../objects/page_factory';
 describe('Test Check box', () => {
+  let checkBox;
   beforeEach(() => {
     cy.visit('/');
-    const basePage = new BasePage();
+    const basePage = PageFactory.basePage;
+    checkBox = PageFactory.CheckBox;
     basePage.goToSectionFromCategoryCards('Elements');
     basePage.goToSectionFromleftPanel('Check Box');
   });
 
   it('Should click expand and click each button', () => {
-    const checkBox = new CheckBox();
     checkBox.showAllButtons();
     checkBox.clickSingleButton('Home');
 

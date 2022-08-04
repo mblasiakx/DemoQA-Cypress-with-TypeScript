@@ -1,16 +1,15 @@
-import { BasePage } from '../../objects/base_page';
-import { BrokenLinks } from '../../objects/elements/broken_links';
+import PageFactory from '../../objects/page_factory';
 describe('Broken Links and Valid Links', () => {
   let brokenLinks;
   beforeEach(() => {
     cy.visit('/');
-    const basePage = new BasePage();
+    const basePage = PageFactory.basePage;
+    brokenLinks = PageFactory.BrokenLinks;
     basePage.goToSectionFromCategoryCards('Elements');
     basePage.goToSectionFromleftPanel('Broken Links - Images');
   });
 
   it('Should open Valid link', () => {
-    brokenLinks = new BrokenLinks();
     brokenLinks.clickOnLink('Click Here for Valid Link');
   });
 });

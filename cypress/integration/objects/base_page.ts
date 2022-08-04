@@ -11,7 +11,7 @@ export class BasePage {
     return this.categoryCards.contains(name).click();
   }
 
-  goToSectionFromleftPanel(name: string) {
+  goToSectionFromleftPanel(name: RegExp | string) {
     return this.leftPanel.contains(name).click();
   }
 }

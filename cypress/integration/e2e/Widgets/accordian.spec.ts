@@ -1,12 +1,11 @@
-import { BasePage } from '../../objects/base_page';
-import { Accordian } from '../../objects/widgets/accordian';
+import PageFactory from '../../objects/page_factory';
 
 describe('Test Accordian page', () => {
   let accordian;
   before(() => {
     cy.visit('/');
-    const basePage = new BasePage();
-    accordian = new Accordian();
+    const basePage = PageFactory.basePage;
+    accordian = PageFactory.Accordian;
     basePage.goToSectionFromCategoryCards('Widgets');
     basePage.goToSectionFromleftPanel('Accordian');
   });

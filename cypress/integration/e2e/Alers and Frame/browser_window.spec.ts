@@ -1,19 +1,14 @@
-import { BasePage } from '../../objects/base_page';
-import { BrowserWindows } from '../../objects/alerts and frame/browser_windows';
+import PageFactory from '../../objects/page_factory';
 describe('Browser Windows tests', () => {
   let browserWindow;
   beforeEach(() => {
-    cy.visit('/', {
-      onBeforeLoad(win) {
-        cy.stub(win, 'open');
-      },
-    });
-
-    const basePage = new BasePage();
-    browserWindow = new BrowserWindows();
+    cy.visit('/');
+    const basePage = PageFactory.basePage;
+    browserWindow = PageFactory.BrowserWindows;
     basePage.goToSectionFromCategoryCards('Alerts, Frame & Windows');
     basePage.goToSectionFromleftPanel('Browser Windows');
   });
+
   it('Should open New Tab', () => {
     browserWindow.openTabFromBrowserWindows('tab');
 

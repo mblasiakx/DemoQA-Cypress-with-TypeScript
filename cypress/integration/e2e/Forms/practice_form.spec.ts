@@ -1,13 +1,12 @@
-import { BasePage } from '../../objects/base_page';
-import { PracticeForm } from '../../objects/forms/practice_forms';
-import { config } from '../../../config';
+import PageFactory from '../../objects/page_factory';
+import { config } from '../../../../config';
 
 describe('Practice Form', () => {
   let practiceForm;
   before(() => {
     cy.visit('/');
-    const basePage = new BasePage();
-    practiceForm = new PracticeForm();
+    const basePage = PageFactory.basePage;
+    practiceForm = PageFactory.PracticeForm;
     basePage.goToSectionFromCategoryCards('Forms');
     basePage.goToSectionFromleftPanel('Practice Form');
   });

@@ -1,12 +1,11 @@
-import { config } from '../../../config';
-import { BasePage } from '../../objects/base_page';
-import { WebTables } from '../../objects/elements/web_tables';
+import { config } from '../../../../config';
+import PageFactory from '../../objects/page_factory';
 describe('WebTables - add,edit and remove', () => {
   let webTables;
   beforeEach(() => {
     cy.visit('/');
-    const basePage = new BasePage();
-    webTables = new WebTables();
+    const basePage = PageFactory.basePage;
+    webTables = PageFactory.WebTables;
     basePage.goToSectionFromCategoryCards('Elements');
     basePage.goToSectionFromleftPanel('Web Tables');
   });

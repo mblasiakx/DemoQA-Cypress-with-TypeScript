@@ -1,11 +1,10 @@
-import { BasePage } from '../../objects/base_page';
-import { RadioButton } from '../../objects/elements/radio_button';
+import PageFactory from '../../objects/page_factory';
 describe('Radio button section test', () => {
   let radioButton;
   beforeEach(() => {
     cy.visit('/');
-    const basePage = new BasePage();
-    radioButton = new RadioButton();
+    const basePage = PageFactory.basePage;
+    radioButton = PageFactory.RadioButton;
     basePage.goToSectionFromCategoryCards('Elements');
     basePage.goToSectionFromleftPanel('Radio Button');
   });

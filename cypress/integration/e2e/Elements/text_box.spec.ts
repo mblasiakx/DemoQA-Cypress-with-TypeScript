@@ -1,13 +1,11 @@
-import { config } from '../../../config';
-import { BasePage } from '../../objects/base_page';
-import { TextBox } from '../../objects/elements/text_box';
-
+import { config } from '../../../../config';
+import PageFactory from '../../objects/page_factory';
 describe('Test Text Box in Elements tab', () => {
   let textBox;
   before(() => {
     cy.visit('/');
-    const basePage = new BasePage();
-    textBox = new TextBox();
+    const basePage = PageFactory.basePage;
+    textBox = PageFactory.TextBox;
     basePage.goToSectionFromCategoryCards('Elements');
     basePage.goToSectionFromleftPanel('Text Box');
   });

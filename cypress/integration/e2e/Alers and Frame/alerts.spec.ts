@@ -1,11 +1,10 @@
-import { BasePage } from '../../objects/base_page';
-import { Alerts } from '../../objects/alerts and frame/alerts';
+import PageFactory from '../../objects/page_factory';
 describe('Browser Windows tests', () => {
   let alert;
   beforeEach(() => {
     cy.visit('/');
-    const basePage = new BasePage();
-    alert = new Alerts();
+    const basePage = PageFactory.basePage;
+    alert = PageFactory.Alerts;
     basePage.goToSectionFromCategoryCards('Alerts, Frame & Windows');
     basePage.goToSectionFromleftPanel(/^Alerts$/);
   });
